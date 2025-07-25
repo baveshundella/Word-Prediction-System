@@ -7,9 +7,6 @@
   <img src="https://img.shields.io/badge/Offline-Yes-brightgreen?style=for-the-badge" alt="Offline"/>
 </p>
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/placeholder/word-prediction-demo.png" alt="Word Prediction System Demo" width="600"/>
-</p>
 
 ---
 
@@ -25,11 +22,6 @@
 
 ---
 
-## 🖼️ Demo Screenshot
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/placeholder/word-prediction-screenshot.png" alt="App Screenshot" width="500"/>
-</p>
 
 ---
 
