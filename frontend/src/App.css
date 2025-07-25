@@ -1,0 +1,201 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background: #f9fafb;
+  transition: background 0.3s;
+}
+body.dark, .main-bg.dark {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+}
+
+.main-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  max-width: 420px;
+  width: 100%;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.container.dark {
+  background: #23272f;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+h1 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1e293b;
+  letter-spacing: -1px;
+  transition: color 0.3s;
+}
+.container.dark h1 {
+  color: #f1f5f9;
+}
+.toggle {
+  width: 54px;
+  height: 28px;
+  background: #e0e7ff;
+  border-radius: 999px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+  margin-left: 1rem;
+}
+.toggle.active {
+  background: #6366f1;
+}
+.toggle-thumb {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  transition: left 0.3s, background 0.3s;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.15);
+}
+.toggle.active .toggle-thumb {
+  left: 28px;
+  background: #23272f;
+}
+.toggle-label {
+  margin-left: 32px;
+  font-size: 1.1rem;
+  user-select: none;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #334155;
+  font-weight: 500;
+  text-align: left;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  transition: color 0.3s;
+}
+.container.dark label {
+  color: #cbd5e1;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.7rem;
+  font-size: 1.08rem;
+  margin-bottom: 1.2rem;
+  outline: none;
+  background: #f1f5f9;
+  color: #23272f;
+  font-family: inherit;
+  transition: border 0.2s, background 0.3s, color 0.3s;
+}
+input[type="text"].dark {
+  background: #23272f;
+  color: #f1f5f9;
+  border: 1.5px solid #6366f1;
+}
+input[type="text"]:focus {
+  border: 2px solid #6366f1;
+}
+.suggestions {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.chip {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.55rem 1.2rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  margin-bottom: 0.2rem;
+  outline: none;
+}
+.chip:hover, .chip.selected, .chip:focus {
+  background: #6366f1;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(99,102,241,0.18);
+}
+.chip.dark {
+  background: #353a45;
+  color: #a5b4fc;
+}
+.chip.dark:hover, .chip.dark.selected, .chip.dark:focus {
+  background: #6366f1;
+  color: #fff;
+}
+.footer {
+  margin-top: 1.5rem;
+  color: #94a3b8;
+}
+.bg-anim {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.stars, .bubbles {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+}
+.center-container, .container {
+  position: relative;
+  z-index: 1;
+  /* already styled */
+}
+.container {
+  animation: fadeInCard 1s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(40px) scale(0.98);}
+  to   { opacity: 1; transform: none;}
+}
+.suggestions {
+  animation: fadeInSuggestions 0.7s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeInSuggestions {
+  from { opacity: 0; transform: translateY(10px);}
+  to   { opacity: 1; transform: none;}
+}
